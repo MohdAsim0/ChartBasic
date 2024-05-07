@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chart-container {
+            width: 600px;
+            margin: 0 auto;
+
+        }
+        
+        h6 {
+            text-align: center;
+            font-size: 16px;
+            margin: 10px 0 10px 0;
+            opacity: .8;
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h6>Monthly Sales Data</h6>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Monthly Sales',
+                    data: [60, 50,30,45,25,90],
+                    borderWidth: 1,
+                    borderColor:'rgb(9, 89, 89)',
+                    backgroundColor:'rgba(186, 242, 242,.5)'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
